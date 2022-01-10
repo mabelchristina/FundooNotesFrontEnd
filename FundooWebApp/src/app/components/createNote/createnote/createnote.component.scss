@@ -1,0 +1,258 @@
+// .openedmatcard{
+//     width:40%;
+//     height:auto;
+//     //left:25%;
+//     right: 400px;
+//     margin-top: 20px;
+//     display: flex;
+//     cursor: text;
+//     background-color:white;
+//     align-items: center;
+//     top:50px;
+//   }
+//   .input{
+//     width:95%;
+//     //height:20px;
+//     height:auto;
+//     border: none;
+//     outline: none;
+//     background-color:white;
+//     margin-bottom: 15px;
+//     position: relative;
+//   }
+//   .searchbar{
+//     background-color: white;
+//       margin: 0 0;
+//       height: 25px;
+//       width: 100%;
+//       top: 20px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       border:none;
+//       outline: none;
+//   }
+//   .closedmatcard{
+//     width:40%;
+//     height: 10px;
+//     position:sticky;
+//     left: 28%;
+//     background-color: white;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     z-index:1000;
+//     top: 20px;
+//   }
+//   .note
+//     {
+//       margin-bottom: 50px;
+//       margin-top: 3px;
+//       justify-content: center;
+//     }
+//     .d-flex
+//     {
+//         display: flex;
+//     }
+//   .takeNote{
+//       // font-weight: 500;
+//       // padding: 15px;
+//       opacity: 50%;
+//       background-color: white;
+    
+//      // height: 25px;
+//       width: 100%;
+//      // top: 20px;
+//       align-items: center;
+//       justify-content: space-between;
+//       border:none;
+//       outline: none;
+//   }
+//   .space
+//   {
+//       justify-content: space-between;
+//   }
+//   .notetext{
+//       font-weight: 400;
+//       font-size: 1rem;
+//       border: none;
+//       background: white;
+//       width: 20em;
+//       font-family: Roboto,Arial,sans-serif;
+//       outline: none;
+//       height: auto;
+//       margin-left: 15px;
+//   }
+  
+//   .box{
+//   display: flex;
+//   margin-left: 0.5cm;
+//   }
+//   .note-div{
+//     margin-left:25%;
+//   }
+//   .cancelclass{
+//   width:15%;
+//   Text-align:center;
+//   margin-left: 70%;
+//   position: sticky;
+//   }
+//   .bottomalign
+//   {
+//   width: 60%;
+//   Text-align:left;
+//   float:left;
+//   }
+//   .noteicon{
+//       left:60%;
+//       background-color: white;
+//   }
+  
+  
+//   .mar:hover{
+//       .remind-div{
+//           visibility: visible;
+//         }
+//     }
+  
+//     .remind-div{
+//       outline: none;
+//       border: none;
+//       background-color: transparent;
+//       visibility: hidden;
+//     }
+//     .lab-div{
+//       outline: none;
+//       border: none;
+//       background-color: transparent;
+//       visibility: hidden;
+//     }
+//     .mars:hover{
+//       .lab-div{
+//         visibility: visible;
+//       }
+//     }
+//     .labe{
+//       flex-wrap: row-wrap;
+//     }
+//     .Cbutton
+//     {
+//         margin-top: 10px;
+//         margin-left: 5px;
+//         margin-right: -10px;
+//     }
+
+
+
+
+// .takeNoteContainer{
+//   margin-left: 30%;
+//   margin-right: 35%;
+//   border: 1px solid gainsboro;
+//   border-radius: 6px;
+//   opacity: 1;
+//   margin-top: 2.25%;
+//   padding: 1%;
+//   direction: ltr;
+//   white-space: nowrap;
+//   background: transparent;
+//   font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+//   font-variant-ligatures: none;
+//   box-shadow: 1% 1% 10% 10% rgb(220, 220, 228);
+  
+// }
+
+// input{
+//   border: none;
+// }
+
+
+
+
+
+input {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  border-style: none;
+  height: 45px;
+  //   padding: 10px 30px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+button {
+  opacity: 80%;
+}
+button:hover {
+  background-color: #f1f3f4;
+}
+.mat-icon {
+  font-size: 20px;
+}
+form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  width: 650px;
+  .first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 15px 0px 20px;
+    input {
+      width: 100%;
+    }
+  }
+  .firsttext {
+    display: none;
+  }
+  .second {
+    padding: 2px 20px;
+    display: flex;
+    input {
+      width: 100%;
+    }
+  }
+  .secondtext {
+    display: none;
+  }
+
+}
+@media screen and (max-width: 700px) {
+  form {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 515px) {
+  form {
+    width: 400px;
+    .third {
+      .icons {
+        width: 300px;
+        .undo,
+        .redo {
+          display: none;
+        }
+      }
+      .close {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 418px) {
+  form {
+    width: 340px;
+    .third {
+      .icons {
+        width: 250px;
+        .undo,
+        .redo {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<div class="border">
+    <div class="content">
+            <div class="form">           
+                <div class="fundoo">    
+                    <p>
+                        <span class="f">F</span>
+                        <span class="u">u</span>
+                        <span class="n">n</span>
+                        <span class="d">d</span>
+                        <span class="o">o</span>
+                        <span class="O">o</span>
+                    </p>
+                </div>
+            <div>
+                            
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <mat-card-content>
+                            <div class="create">
+                                <h1>Create your Fundoo Account</h1>
+                            </div>
+                
+                            <div class="names" >
+                                 <div class="fname">
+                                <mat-form-field appearance="outline" fxFlex="100" fxFlex.xs="100">
+                                <mat-label>First Name</mat-label>
+                                <input matInput type="text" placeholder="firstName" formControlName="firstName" id="fisrtName">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" fxFlex.xs="100">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput type="text" placeholder="LastName" formControlName="lastName" id="lastName">
+                                </mat-form-field>
+                            </div>
+                       </div>
+                
+                        <div>
+                            <mat-form-field class="email" appearance="outline" fxFlex="350" fxFlex.xs="250">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="text" placeholder="Email" class="email" formControlName="email" id="email">
+                                <mat-hint>You can use letters,Numbers</mat-hint>
+                                <mat matSuffix ></mat>
+                            </mat-form-field>
+                        </div>
+                                
+                        <div class="names">
+                            <div class="fname">
+                                <mat-form-field appearance="outline" fxFlex.xs="100">
+                                    <mat-label>Password</mat-label>
+                                        <mat-hint>Use 8 or more characters</mat-hint>
+                                            <input matInput type="text" placeholder="Password" formControlName="password" id="password" [type]="hide ? 'password' : 'text'">
+                                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                                </button>
+                                                <mat-error>
+                                                    atleast 1 small,1 Capital, 1 digit, 1 special char and length 6-10
+                                                    characters.
+                                                </mat-error>
+                                </mat-form-field>
+                            </div>
+                        <div>
+                            <mat-form-field appearance="outline" fxFlex="70" fxFlex.xs="100">
+                                <mat-label>Confirm Password</mat-label>
+                                    <input matInput type="text" placeholder="Confirm" formControlName="confirmPassword" id="cpassword"
+                                        [type]="hide ? 'password' : 'text'">
+                                                        <mat-error >password
+                                                            length should be 6
+                                                        </mat-error>
+                                                        <mat-error >
+                                                            Passwords did not match
+                                                        </mat-error>
+                                                        
+                                                    </mat-form-field>
+                                                
+                                                </div>
+                                            </div>
+                                       
+                                        <div class="buttons" >
+                                            <a class="signIn" routerLink="/login" >Sign In Instead</a>
+                                            <button  class="register" >Next</button>
+                                        </div>
+                                    </mat-card-content>
+                                </div>
+                                
+                            </form>
+                        </div>
+            </div>
+    
+            <div >
+                <img src="../../../../assets/account.svg" height="244" width="244" />
+                <h3>One account. All of Fundoo working for you.</h3>     
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,27 @@
+
+<div style="display: block;justify-content: center;flex-direction: row;margin-left: 30%;">
+  <form [formGroup]="noteForm">
+    <div class="first">
+      <input type="text" placeholder="Title" formControlName="Title" />
+      <button mat-icon-button>
+        <mat-icon class="material-icons-outlined">push_pin</mat-icon>
+      </button>
+    </div>
+
+    <div class="first firsttext">
+      <p>Food</p>
+      <button mat-icon-button>
+        <mat-icon class="material-icons-outlined">local_offer</mat-icon>
+      </button>
+    </div>
+
+    <div class="second">
+      <input type="text" placeholder="Take a note..." formControlName="Body" />
+      <div></div>
+    </div>
+    <div style="display: flex;opacity: 1px;left: auto;margin-left: 85%;">
+      <button class="close" mat-stroked-button (click)="createNote()">Close</button>
+    </div>
+    <app-icons></app-icons>
+  </form>
+</div>

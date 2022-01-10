@@ -1,0 +1,178 @@
+.fundoo
+{
+  align-items: left;
+  padding-top: 10%;
+}
+.f{
+  color:#4285F4;
+  }
+  .u{
+  color:#DB4437
+  }
+  .n{
+    color: #F4B400
+  }
+  .d{
+    color:#4285F4;
+  }
+  .o{
+    color:  #0F9D58
+  }
+  .O{
+    color:#DB4437
+  }
+
+a {
+  text-decoration: none;
+}
+
+.i{
+  margin-top: 20%;
+}
+.signIn{
+  color: #1a73e8;
+  display: flex;
+  align-items: flex-start;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  cursor: pointer;
+  margin-right: 200px;
+  margin-top: 50px;
+
+}
+.content > div {
+
+  background-color: #ffffff;
+  width: 70%;
+  
+  font-size: 30px;
+ // padding-top: 100px;
+ padding: 0px;
+ 
+}
+.border
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 25px;
+  border: 2px solid #adafa9;
+  padding: 20px;
+}
+
+.main{
+  min-height:-webkit-fill-available !important;
+}
+.card :hover{
+  background-color: #ffa500;
+  transform: scale(1.1); 
+  
+ }
+ .service{
+  margin-left: 36px;
+  margin-top: 36px;
+}
+.message{
+  margin-top: 8px;
+}
+
+.mat-card-subtitle{
+  color: #202124;
+  
+}
+img{
+ padding-top: 40%;
+}
+
+button{
+  display: inline-block;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+.selected{
+  background-color: #e6ac00;
+  width: fit-content;
+  max-width: 144px;
+
+.insideMat{
+   margin-left: -36px;
+   margin-top: -36px;
+   min-height: 212px;
+}
+
+}
+.notSelected{
+  background-color: #b8b5ae;
+  width: fit-content;
+  max-width: 144px;
+
+  .insideMat{
+      margin-left: -36px;
+      margin-top: -36px;
+   min-height: 212px;
+
+  }
+}
+.names
+{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-right: 20px;
+}
+.fname
+{
+  display: flex;
+  align-items: flex-start;
+  padding-right: 10px;
+}
+.email{
+  display: flex;
+  padding: auto;
+  
+}
+
+.close {
+  position:absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  margin-top:130px;
+}
+.register
+{
+  display: flex;
+  background-color: #1a73e8;
+  color:white ;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+.create
+{
+  font-family: 'Times New Roman', Times, serif;
+  font: bold;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.password
+{
+  flex-direction: row;
+  padding: 20px;
+  padding-inline: 20px;
+}
+.form
+{
+  margin-left: 5%;
+}

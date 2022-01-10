@@ -1,0 +1,58 @@
+<div class="row" >
+    <div class="main" >
+            <mat-card-title>
+                <p>
+                    <span class="f">F</span>
+                    <span class="u">u</span>
+                    <span class="n">n</span>
+                    <span class="d">d</span>
+                    <span class="o">o</span>
+                    <span class="O">o</span>
+                </p>
+            </mat-card-title>
+
+            <form [formGroup]="resetPasswordForm" (ngSubmit)="onSubmit()" >
+                <mat-card-content>
+                    <div class="heading">
+                        <h1 >Reset Password</h1>
+                        <h3>Use your Fundoo Account</h3>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline" fxFlex.xs="100">
+                            <mat-label>Password</mat-label>
+                                <mat-hint>Use 8 or more characters</mat-hint>
+                                    <input matInput type="text" placeholder="Password" formControlName="password" id="password" [type]="hide ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide"
+                                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                        <mat-error >
+                                            atleast 1 small,1 Capital, 1 digit, 1 special char and length 6-10
+                                            characters.
+                                        </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline" fxFlex="70" fxFlex.xs="100">
+                            <mat-label>Confirm Password</mat-label>
+                                <input matInput type="text" placeholder="Confirm" formControlName="confirmPassword" id="cpassword"
+                                    [type]="hide ? 'password' : 'text'">
+                                <mat-error >password is
+                                    required</mat-error>
+                                    <mat-error >password
+                                        length should be 6
+                                    </mat-error>
+                                     <mat-error >
+                                    Passwords did not match
+                                    </mat-error>
+                                                    
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+
+            </form>
+            <div class="buttons" >
+                <button >Submit</button>
+            </div>
+    </div>
+</div>

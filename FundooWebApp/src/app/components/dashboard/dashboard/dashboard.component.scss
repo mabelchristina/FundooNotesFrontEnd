@@ -1,0 +1,336 @@
+// .example-container {
+//     display: flex;
+//     flex-direction: column;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//   }
+//   .gb_Hf {
+//     height: 46px;
+//     padding: 1px;
+//     margin-left: 100px;
+//     //margin-right: 95px;
+//     overflow: hidden;
+//   }
+  
+//   mat-toolbar-row, .mat-toolbar-single-row {
+//     display: flex;
+//     align-items: center;
+  
+// }
+// .head-div{
+//     font-size: large;
+// }
+//   .example-is-mobile .example-toolbar {
+//     position: fixed;
+//     z-index: 2;
+//   }
+//   .example-app-name {
+//     margin-left: 18px;
+//   }
+//   .grid-div{
+//       display: flex;
+//       justify-content: right;
+//       margin-top: 5px;
+//       margin-left: 88px;
+//   }
+//   .listbutton-div .gridbutton-div{
+//       margin-right: 10px;
+//   }
+
+//   .example-sidenav-container {
+//     flex: 1;
+//   }
+  
+//   .example-is-mobile .example-sidenav-container {
+//     flex: 1 0 auto;
+//   }
+//   .toolbar{
+//     background-color: white;
+//     height:50px;
+// }
+// .page {
+//     display: flex;
+//   }
+//   .sideNav {
+//     display: flex;
+//     align-items: center;
+//     justify-content:center;
+//     min-width: 56px;
+//     cursor: pointer;
+//   }
+// .Main {
+//     display: flex;
+//     width: 100%
+// }
+
+// .sideNavIcon {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     min-width: 156px;
+//     cursor: pointer;
+// }
+// .refresh {
+//     display: flex;
+//     margin-left: 2cm;
+//     justify-content: space-around;
+//     width: 96px;
+// }
+// .appBarLastIcon {
+//     display: flex; 
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 7em;
+// }
+// .searchWhole {
+//     font-family: Roboto, Arial, sans-serif;
+//     width: 780px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .search{
+//     // padding-left: 40px;
+//     margin-left: 35px;
+// }
+// .searchicon{
+//     visibility: visible;
+// }
+// .searchbutton{
+//     outline: none;
+//     border: none;
+//     background-color: transparent;
+//     visibility: hidden;
+// }
+
+// .searchbar {
+//     display: flex;
+//     align-items: center;
+//     background-color: #fff;
+//     border-radius: 7px;
+//     height: 13px;
+//     width: 200%;
+// }
+// input.input-field {
+//     outline: none;
+//     border: none;
+//     height: 30px;
+//     width: auto;
+// }
+// .searchinput {
+//     // width: 47em;
+//     // border-style: none;
+//     outline: none;
+//     border: none;
+//     width: 560px;
+//     margin-left: 20px;
+// }
+// .example-container {
+//     width: -400px;
+//     height: 100vh;
+// }
+// .example-sidenav {
+//     width: auto;
+// }
+// .image-div{
+//     margin-left: 9px;
+//     position: sticky;
+// }
+// .maindiv {
+//     display: inline;
+// }
+// .signout{
+//     height: 10cm;
+//     width: 6cm;
+//     background-color: rgb(198, 233, 213);
+// }
+// .circle {
+//        border-radius: 50%;
+//        height: 2cm;
+//        width: 2cm;
+// }
+// .hidden{
+//     visibility: hidden;
+//     border-radius: 10px;
+// }
+// img {
+//     height:1cm;
+//     border-radius: 50%;
+//   }
+//   .margin {
+//       margin: 1cm;
+//   }
+//   .size{
+//       width: auto;
+//       height: 9cm;
+//   }
+//   .matCard{
+//       width: auto;
+//   }
+//   .profile{
+//     margin-left: 5cm;
+//     margin-bottom: 1.0cm;
+//   }
+// .pro{
+//     .mat-icon 
+//     {
+//         font-size: 50px;
+//         margin-top: 35px;
+//     }
+// }
+// .image-cropper {
+//     width: 1.0cm;
+//     height: 1.0cm;
+//     position: relative;
+//     overflow: hidden;
+//     border-radius: 50%;
+// }
+// .profile-pic {
+//     margin: 0 auto;
+//     margin-left: -150%;
+//     height: 2.2cm;
+//     width: auto;
+//   //display: inline;
+// }
+
+// input#file {
+//     display: inline-block;
+//     width: 100%;
+//     padding: 120px 0 0 0;
+//     height: 100px;
+//     overflow: hidden;
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+//     background: #e4e4e4;
+//     border-radius: 20px;
+//     background-size: 60px 60px;
+//   }
+//   .input-field{
+//       width:47em;
+//       border-style: none;
+//   }
+// .mat-button-wrapper{
+//     margin-left: 90px;
+//     justify-content: center;
+// }
+//   .card{
+//     display: flex;
+//     height: 250px;
+//     width: 300px;
+// }
+//   .pro{
+//     .mat-icon 
+//     {
+//         font-size: 60px;
+//     }
+// }
+
+
+
+
+
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+    direction: ltr;
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
+    white-space: nowrap;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'Product Sans',Arial,sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    position: relative;
+    top: -1.5px;
+    vertical-align: middle;
+    color: #5f6368;
+    opacity: 1;
+    padding-left: 4px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+
+  .navMenu{
+    direction: ltr;
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+    fill: currentColor;
+    color: #5f6368;
+    opacity: 1;
+  }
+
+  .mat-sidenav-content{
+    background-color: white;
+  }
+
+  .example-toolbar{
+    background-color: white;
+  }
+
+  input{
+    border: none;
+  }
+
+  .search-box{
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+    opacity: 1;
+    padding-left: 1%;
+    direction: ltr;
+    white-space: nowrap;
+    background: transparent;
+    font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-variant-ligatures: none;
+    height: 46px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+ 
+  .search-logo{
+    direction: ltr;
+    white-space: nowrap;
+    cursor: pointer;
+    // line-height: 0;
+    height: 24px;
+    width: 24px;
+    fill: currentColor;
+    color: #5f6368;
+    opacity: 1;
+    padding: 8px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
