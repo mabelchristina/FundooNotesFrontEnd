@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
  labelName:any;
 
   constructor(
-    private route: Router,
+    public route: Router,
     public dialog: MatDialog,
     changeDetectorRef: ChangeDetectorRef, media: MediaMatcher
   ) {this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -44,6 +44,12 @@ ngOnDestroy(): void {
   toggleViews() {
      this.viewToggle = !this.viewToggle;
     
+  }
+
+  signout()
+  {
+    localStorage.removeItem('token')
+    this.route.navigateByUrl('/login')
   }
   }
 

@@ -15,17 +15,19 @@ export class GetAllNotesComponent implements OnInit {
     this.getAllNotes();
   }
   getAllNotes() {
-    console.log("going to notes")
+    console.log('going to notes');
     this.noteservice.getAllNotes().subscribe((result: any) => {
       console.log(result);
       this.noteList = result.data.data;
-      this.noteList.reverse()
+      this.noteList.reverse();
+      this.noteList = this.noteList.filter((element: any) => {
+        return element.isDeleted == false && element.isArchived == false;
+      })
       console.log('the note list is', this.noteList);
     });
   }
-  messageReceived(e:any)
-  {
-console.log("msg from create note",e)
-this.getAllNotes();
+  messageReceived(e: any) {
+    console.log('msg from create note', e);
+    this.getAllNotes();
   }
 }

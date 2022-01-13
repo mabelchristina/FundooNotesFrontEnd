@@ -12,12 +12,20 @@ import { NotesService } from 'src/app/services/note/notes.service';
 export class CreatenoteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
   formBuilder: any;
+  colors: any;
+  hide:any
+    open:any=false;
+
+  isOpen = true;
+  public show: boolean = true;
+  public buttonName: any = "Title";
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private noteService: NotesService
-  ) {}
+    private noteService: NotesService) {}
+  title=new FormControl('',[Validators.required])
+description=new FormControl('',[Validators.required])
   noteForm!: FormGroup;
 
   @Output() createNoteAutoRefresh = new EventEmitter<any>();
@@ -28,6 +36,21 @@ export class CreatenoteComponent implements OnInit {
       Body: new FormControl(null),
     });
   }
+  changeDisplay(){
+    this.open= !this.open
+  }
+  setClicked(){
+    this.hide=true
+  }
+
+  onClick() {
+    this.show = !this.show;
+    // CHANGE THE NAME OF THE field.
+    if (this.show)
+      this.buttonName = "Take a note";
+    else
+      this.buttonName = "Title"; }
+      
   createNote() {
     let reqData = {
       title: this.noteForm.value.Title,
@@ -35,9 +58,13 @@ export class CreatenoteComponent implements OnInit {
     };
 
     this.noteService.createNote(reqData).subscribe((res: any) => {
-      console.log(res);
+      console.log(" creating a note",res);
       this.createNoteAutoRefresh.emit(res);
     });
+  }
+  createColor(color: any) {
+    this.colors = color;
+    console.log(this.colors)
   }
  
 }

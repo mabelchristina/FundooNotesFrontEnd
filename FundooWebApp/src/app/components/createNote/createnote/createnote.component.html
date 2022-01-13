@@ -1,27 +1,117 @@
-
-<div style="display: block;justify-content: center;flex-direction: row;margin-left: 30%;">
-  <form [formGroup]="noteForm">
-    <div class="first">
-      <input type="text" placeholder="Title" formControlName="Title" />
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">push_pin</mat-icon>
-      </button>
+<div style="display: block;justify-content: center;flex-direction: row;margin-left: 30%; margin-top:4% ;">
+  <form [formGroup]="noteForm" [ngStyle]="{'background-color': colors}">
+    <div *ngIf="!hide" (click)="setClicked()" style="width: 500px; "fxLayout="space-between" fxFlex.gt-md="50">
+      <a style="margin-left:5%  ;width: 10%;">
+        Take a Note
+        <div *ngIf="show">
+          <div class="img1" style="margin-top: auto;">
+            <mat-icon>check_box</mat-icon>
+          </div>
+          <div class="img2">
+            <mat-icon>brush</mat-icon>
+          </div>
+          <div class="img3" >
+            <mat-icon>photo</mat-icon>
+          </div>
+        </div>
+      </a>
     </div>
-
-    <div class="first firsttext">
-      <p>Food</p>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">local_offer</mat-icon>
-      </button>
+    <div *ngIf="hide">
+      <div>
+        <div class="first">
+          <input type="text" placeholder="Title" formControlName="Title" />
+          <button mat-icon-button>
+            <mat-icon class="material-icons-outlined">push_pin</mat-icon>
+  
+          </button>
+        </div>
+      </div>
+  
+      <div class="second">
+        <input type="text" placeholder="Take a note..." formControlName="Body" />
+        <div></div>
+      </div>
+      <div style="display: flex;opacity: 1px;left: auto;margin-left: 85%;">
+  
+        <button class="close" mat-stroked-button (click)="createNote()">Close</button>
+  
+      </div>
+      <app-icons></app-icons>
     </div>
-
-    <div class="second">
-      <input type="text" placeholder="Take a note..." formControlName="Body" />
-      <div></div>
-    </div>
-    <div style="display: flex;opacity: 1px;left: auto;margin-left: 85%;">
-      <button class="close" mat-stroked-button (click)="createNote()">Close</button>
-    </div>
-    <app-icons></app-icons>
+    
   </form>
 </div>
+
+<!-- 
+<div fxLayoutAlign="center">
+  <mat-card class="title" [ngStyle]="{'background-color': colors}">
+    <div fxFlexLayout="column" *ngIf="!show" class="t1">
+      <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
+        cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto" name="content" [(ngModel)]="title"
+        placeholder="Title"></textarea>
+    </div>
+    <div class="t2">
+      <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="auto"
+        cdkAutosizeMinColumns="auto" cdkAutosizeMaxRows="auto" value={note.description} (click)="onClick()"
+        [(ngModel)]="description" name="title" id="description" placeholder="Take a note" class="takeNote"></textarea>
+    </div>
+    <div *ngIf="!show">
+      <app-icons (backGroundColor)="createColor($event)"></app-icons>
+    </div>
+    <div *ngIf="show">
+      <div class="img1">
+        <mat-icon>check_box</mat-icon>
+      </div>
+      <div class="img2">
+        <mat-icon>brush</mat-icon>
+      </div>
+      <div class="img3">
+        <mat-icon>photo</mat-icon>
+      </div>
+    </div>
+
+    <div class="btn1" *ngIf=!show>
+      <button mat-button role='button' tabindex="0" color="blck" class="btn1" data-dismiss='modal'
+        (click)="createNote()">Close</button>
+    </div>
+  </mat-card>
+</div> --> 
+
+<!-- 
+<form [formGroup]="noteForm" (ngSubmit)="createNote" class="createNoteContainer" fxLayout="column" >
+  <div *ngIf="!hide" fxLayout="space-between" fxFlex.gt-md="50" >
+    <input type="text" placeholder="Title" formControlName="Title" />
+    <div fxLayoutAlign="center-center">
+      <button ></button>
+    </div>
+  </div>
+</form> 
+
+
+
+
+
+
+<!--  
+<mat-card fxLayoutAlign="start center">
+  <div *ngIf="!hide" (click)="setClicked()" style="width: 500px;">
+    <a>
+      Take a Note
+    </a>
+  </div>
+  <div *ngIf="hide" fxLayout="column" fxLayoutGap="30px">
+    <div fxLayout="column" fxLayoutGap="30px">
+      <mat-form-field style="width: 500px;" appearance="outline">
+        <input matInput placeholder="Title" [(ngModel)]="title">
+      </mat-form-field>
+      <mat-form-field style="width: 500px;" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description" [(ngModel)]="description"></textarea>
+      </mat-form-field>
+      <div fxLayout="center center" fxLayoutGap="10px">
+         <app-icons [noteArc]=""></app-icons> 
+         <button (click)="createNote()" mat-raised-button color="primary">Close</button>
+      </div>
+    </div>
+  </div>
+</mat-card>  -->

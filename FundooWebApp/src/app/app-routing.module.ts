@@ -11,6 +11,8 @@ import { ForgetComponent } from './components/pwd-forgot/forget/forget.component
 import { ResetComponent } from './components/pwd-reset/reset/reset.component';
 import { SignupComponent } from './components/signup/signup/signup.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { ArchiveComponent } from './components/archive/archive/archive.component';
+import { TrashComponent } from './components/trash/trash/trash.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,12 @@ const routes: Routes = [
      
     {
       path:'note',component:GetAllNotesComponent,
+    },
+    {
+      path:'archive',component:ArchiveComponent
+    },
+    {
+      path:'trash',component:TrashComponent
     }
     ]
   }

@@ -33,6 +33,7 @@ import { UpdateComponent } from './components/update-Note/update/update.componen
 import { TrashComponent } from './components/trash/trash/trash.component';
 import { AuthGuardService } from './services/AuthGuard/auth-guard.service';
 import {MatMenuModule} from '@angular/material/menu';
+import { ArchiveComponent } from './components/archive/archive/archive.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {MatMenuModule} from '@angular/material/menu';
     GetAllNotesComponent,
     UpdateComponent,
     TrashComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,

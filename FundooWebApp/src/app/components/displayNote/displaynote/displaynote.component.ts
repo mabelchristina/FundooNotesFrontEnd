@@ -9,9 +9,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-  noteForm :FormGroup= new FormGroup({});
+
 
   @Input() NotesArray:any
+  @Input() isTrash: any;
+  @Input() isUnArchive: any;
   constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {

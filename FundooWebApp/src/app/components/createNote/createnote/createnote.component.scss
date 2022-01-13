@@ -203,6 +203,24 @@ form {
     input {
       width: 100%;
     }
+    
+  }
+  .img1{
+    margin-left: 95%;
+    width: 0px;
+    height: 0px;
+    
+  }
+  
+  .img2{
+   
+    margin-left: 105%
+    
+  }
+  
+  .img3{
+    margin-left:115%;
+   
   }
   .firsttext {
     display: none;
@@ -256,3 +274,126 @@ form {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+// .mat-card{
+//   margin-left: -10px;
+//   top: 20px;
+//   position: center;
+//   width: 600px;
+//   padding: 32px auto 20px auto;
+//   background: white;
+//   padding: 10px;
+//   border-radius: 7px;
+//   box-shadow: 0 1px 7px rgb(128, 128, 128);
+//   overflow: hidden;
+// }
+
+// .t1{
+//   height: 50px;
+// }
+
+// .t2{
+//   height: 80px;
+//   overflow: hidden;
+// }
+
+// .t2 textarea{
+//   overflow: hidden;
+// }
+
+
+
+// .mat-form-field input{
+//   width: 90%;
+//   border: gray;
+//   margin: 10px 10px;
+//   margin-bottom: 20px;
+//   outline:  none;
+//   font-size: 1rem;
+//   resize: none;
+// }
+
+// .mat-form-field textarea{
+//   width: 90%;
+//   border: gray;
+//   margin: 8px 8px;
+//   margin-bottom: 20px;
+//   outline:  none;
+//   font-size: 1rem;
+//   resize: none;
+// }
+
+// .note{
+//   width: 40%;
+//   height: 60%;
+// }
+
+// .notes{
+//   height: 20px;
+//   border-color: white;
+//   border-radius: 2px;
+// }
+
+// .img1{
+//   margin-left: 75%;
+//   width: 0px;
+//   height: 0px;
+//   margin-top: -70px;
+  
+// }
+
+// .img2{
+//   width: 1px;
+//   height: 15px;
+//   margin-left: 85%
+// }
+
+// .img3{
+//   width: 1px;
+//   height: 15px;
+//   margin-left:95%;
+//   margin-top: -12px;
+// }
+
+// .btn1{
+//   margin-left: 70%;
+//   margin-top: -8%;
+//   user-select: none;
+// }
+
+// ::ng-deep .mat-form-field-underline {
+//   display: none;
+// }
+
+// @media screen and (max-width:360px){
+//   .mat-card{
+//       margin-left: -45px;
+//       margin-right: 35px;
+//       width: 285px
+//   }
+
+//   .btn1{
+//       margin-right: 30px;
+//   }
+
+//   .img1{
+//       margin-right: 25px;
+//   }
+//   .img3{
+//       margin-right: 2px;
+//   }
+
+//   .btn1{
+//       margin-top: -35px;
+//   }
+// }

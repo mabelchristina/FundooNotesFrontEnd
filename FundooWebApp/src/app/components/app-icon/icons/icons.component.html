@@ -8,7 +8,7 @@
 </div> -->
 
 
-<div class="third" style="display: flex;size: 5px;">
+<!-- <div class="third" style="display: flex;size: 5px;">
     <div class="icons">
       <button mat-icon-button style="size: 5%;">
         <mat-icon class="material-icons-outlined">notifications_none</mat-icon>
@@ -25,22 +25,89 @@
       <button mat-icon-button>
         <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
       </button>
-      <button mat-icon-button (click)=" deleteNote()">
+
+
+      
+
+      <!-- <button mat-icon-button (click)=" deleteNote()">
         <mat-icon style="background-blend-mode: normal;"> delete</mat-icon>
     </button>
       <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">more_vert</mat-icon>
-        <!-- <button mat-icon-button disabled class="undo">
+        <mat-icon class="material-icons-outlined">more_vert</mat-icon> -->
+<!-- <button mat-icon-button disabled class="undo">
           <mat-icon class="material-icons-outlined">undo</mat-icon>
         </button>
         <button mat-icon-button disabled class="redo">
           <mat-icon class="material-icons-outlined">redo</mat-icon>
         </button> -->
-        
-
-     
- 
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="icons" style="display: flex;justify-content: space-evenly;" >
+    
+    <div class="img1" *ngIf='!IsTrash'>
+      <mat-icon class="icon">add_alert</mat-icon>
+    </div>
+
+    <div class="img2" *ngIf='!IsTrash'>
+      <mat-icon class="icon">person_add</mat-icon>
+    </div>
+
+    <div class="img3" >
+      <div *ngIf='!IsTrash'>
+        <mat-menu #menu="matMenu" class="mat">
+          <div *ngFor="let color of colors" class="menu">
+            <button type="button" class="button" [ngStyle]="{'background-color': color.color}"
+              (click)="bgColor(color.color)"></button>
+          </div>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon class="icon">palette</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="img4" *ngIf='!IsTrash'>
+      <mat-icon class="icon">photo</mat-icon>
+    </div>
+
+    <div class="img5" (click)="getArchive()" *ngIf='!IsTrash && !IsUnArchive'>
+      <mat-icon class="icon">archive</mat-icon>
+    </div>
+
+    <div class="img5" (click)="unArchive()" *ngIf='IsUnArchive'>
+      <mat-icon class="icon">unarchive</mat-icon>
+
+    </div>
+
+    <div class="img6" *ngIf='!IsTrash'>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)=" deleteNote()">
+          <span>delete</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div fxLayout="row" *ngIf='IsTrash' class="delete">
+      <div (click)="deleteForever()">
+        <mat-icon>delete_forever</mat-icon>
+      </div>
+      <div (click)="restoreNote()">
+        <mat-icon style="margin-left: 10px;">restore_from_trash</mat-icon>
+      </div>
+    </div>
+  </div>

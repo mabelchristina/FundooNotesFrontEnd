@@ -68,7 +68,60 @@ export class NotesService {
         })
       };
       console.log("deleting a note ")
-    return this.httpService.PostService('notes/trashNotes', data,true,httpOptions)
+    return this.httpService.PostService(this.baseUrl+'notes/trashNotes', data,true,httpOptions)
 
+  }
+  trashnote(data:any){
+    this.token=localStorage.getItem('token')
+    let httpOptions = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+      
+      }
+      return this.httpService.PostService(this.baseUrl+'/notes/trashNotes', data, true, httpOptions)
+  }
+
+  archiveNote(data: any){
+    this.token=localStorage.getItem('token')
+      let httpOptions = {
+        headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+        })
+      }
+    return this.httpService.PostService(this.baseUrl+'notes/archiveNotes', data,true, httpOptions)
+  }
+  deleteForeverNotes(data: any){
+    this.token=localStorage.getItem('token')
+      let httpOptions = {
+        headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+        })
+      }
+    return this.httpService.PostService(this.baseUrl+'notes/deleteForeverNotes', data,true, httpOptions)
+
+  }
+  changeNoteColor(data: any){
+    this.token=localStorage.getItem('token')
+    let httpOptions = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+    }
+    return this.httpService.PostService(this.baseUrl+'notes/changesColorNotes', data,true, httpOptions)
+  }
+  getallarchiveNotes() {
+    this.token=localStorage.getItem('token')
+    let httpOptions = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+    }
+    return this.httpService.GetService(this.baseUrl+'notes/getArchiveNotesList',true, httpOptions)
   }
 }
