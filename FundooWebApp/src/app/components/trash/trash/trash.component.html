@@ -1,4 +1,18 @@
-<div fxLayout="row wrap">
-    <app-displaynote [NotesArray]="notes">
-    </app-displaynote>
-  </div>
+
+    <!-- <app-displaynote [NotesArray]="notes">
+    </app-displaynote> -->
+
+    <div fxLayout="column">
+
+        <div  fxFlexAlign="center" fxLayout="row" style="padding-top: 24px;padding-bottom: 8px; align-items: center; margin-left: 37%;">
+            <div class="header"fxLayout="center" >Notes in the Recycle Bin are deleted after 7 days.</div>
+            <div>
+                <button mat-button id="emptybin" class="empty-button" (click)="permanentDelete()" >Empty bin</button>
+            </div>
+        </div>
+    
+        <app-displaynote [allNotes]="notesArray"
+            style="display: flex;flex-wrap: wrap;padding: 10px 40px;justify-content: start;" class="main-getnote">
+        </app-displaynote>
+    
+    </div>

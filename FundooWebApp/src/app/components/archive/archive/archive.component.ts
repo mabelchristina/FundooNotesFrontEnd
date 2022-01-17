@@ -7,7 +7,7 @@ import { NotesService } from 'src/app/services/note/notes.service';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
-  notes:any = [];
+  notesArray: any;
   public isUnArchive = true;
 
   constructor(private noteservice:NotesService) { }
@@ -21,10 +21,10 @@ export class ArchiveComponent implements OnInit {
     console.log('getting  all archive');
     this.noteservice.getallarchiveNotes().subscribe((result: any) => {
       console.log(result);
-      this.notes = result.data.data;
-      this.notes.reverse();
+      this.notesArray = result.data.data;
+      this.notesArray.reverse();
 
-      console.log('the note list is', this.notes);
+      console.log('the note list is', this.notesArray);
     });
   }
 

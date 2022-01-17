@@ -34,6 +34,7 @@ import { TrashComponent } from './components/trash/trash/trash.component';
 import { AuthGuardService } from './services/AuthGuard/auth-guard.service';
 import {MatMenuModule} from '@angular/material/menu';
 import { ArchiveComponent } from './components/archive/archive/archive.component';
+import { TrashiconComponent } from './components/trashicon/trashicon/trashicon.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ArchiveComponent } from './components/archive/archive/archive.component
     UpdateComponent,
     TrashComponent,
     ArchiveComponent,
+    TrashiconComponent,
   ],
   imports: [
     BrowserModule,

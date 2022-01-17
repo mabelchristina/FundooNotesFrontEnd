@@ -7,7 +7,7 @@ import { NotesService } from 'src/app/services/note/notes.service';
   styleUrls: ['./get-all-notes.component.scss'],
 })
 export class GetAllNotesComponent implements OnInit {
-  noteList: any;
+  notesArray: any = [];
 
   constructor(private noteservice: NotesService) {}
 
@@ -18,12 +18,12 @@ export class GetAllNotesComponent implements OnInit {
     console.log('going to notes');
     this.noteservice.getAllNotes().subscribe((result: any) => {
       console.log(result);
-      this.noteList = result.data.data;
-      this.noteList.reverse();
-      this.noteList = this.noteList.filter((element: any) => {
+      this.notesArray = result.data.data;
+      this.notesArray.reverse();
+      this.notesArray = this.notesArray.filter((element: any) => {
         return element.isDeleted == false && element.isArchived == false;
       })
-      console.log('the note list is', this.noteList);
+      console.log('the note list is', this.notesArray);
     });
   }
   messageReceived(e: any) {

@@ -5,6 +5,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { DataService } from 'src/app/services/data/data.service';
 import { NotesService } from 'src/app/services/note/notes.service';
 
 @Component({
@@ -21,32 +22,33 @@ export class UpdateComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private noteservice: NotesService,private formBuilder: FormBuilder
+    private noteservice: NotesService,private dataService: DataService
   ) {
     console.log('data in dialog', data);
+    this.title = data.title
+    this.description = data.description
   }
 
   ngOnInit(): void {
-    this.noteForm=this.formBuilder.group({
-      title : this.data.title,
-      description : this.data.description
-    })
+   
  
   }
   onNoClick(): void {
     this.dialogRef.close();
   }
-  updateNotes(reqData: any) {
-    reqData = {
-      noteId:this.data.id,
-      title: this.data.title,
-      description: this.data.description,
-    };
-    this.noteservice.UpdateNote(reqData).subscribe((response: any) => {
-      console.log(response);
-      this.dialogRef.close();
-    });
+  updateNote() {
 
-    
+    let request = {
+      noteId: this.data.id,
+      title: this.title,
+      description: this.description
+    }
+
+    this.noteservice.UpdateNote(request).subscribe((result) => {
+      console.log(result);
+      this.dialogRef.close();
+      // window.location.reload()
+    })
+    this.dataService.redirectTo("/dashboard/note")
   }
 }

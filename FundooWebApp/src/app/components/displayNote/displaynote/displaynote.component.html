@@ -1,54 +1,30 @@
 
-    <!-- <mat-card class="note" style="display: inline-block;margin-right: 10px;margin-bottom:10px ;" id="noteId" *ngFor="let note of NotesArray "  [ngStyle]="{'background-color': note.color}" >
-      
-                <div class="first">
-                    <div class="title" (click)="openDialog(note)">{{note.title}}</div>
-                    <button mat-icon-button class="icons push_pin">
-                        <mat-icon class="material-icons-outlined">push_pin</mat-icon>
-                    </button>
-                </div>
-                <div class="second">
-                    <div class="body" (click)="openDialog(note)"> {{note.description}}</div>
-                    <div></div>
-                </div>
-                 <app-icons [noteId]="note" [IsUnArchive]="isUnArchive" [IsTrash]="isTrash" ></app-icons>
-
-                <!-- <div class="third">
-                    <div class="icons">
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">notifications_none</mat-icon>
-                        </button>
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">person_add</mat-icon>
-                        </button>
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">color_lens</mat-icon>
-                        </button>
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">insert_photo</mat-icon>
-                        </button>
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
-                        </button>
-                        <button mat-icon-button (click)=" deleteNote()">
-                            <mat-icon style="background-blend-mode: normal;"> delete</mat-icon>
-                        </button>
-                        <button mat-icon-button>
-                            <mat-icon class="material-icons-outlined">more_vert</mat-icon>
-                        </button>
-                    </div> -->
-               
-   
-    <!-- </mat-card>  -->
-
-
-
-    <div style="margin-left: 8%;" fxLayoutGap="2px" class="card">
+    <!-- <div style="margin-left: 8%;" fxLayoutGap="2px" class="card">
         <mat-card class="note" id="noteId" *ngFor = 'let note of NotesArray' [ngStyle]="{'background-color': note.color}">
             <div class="card1">
                 <h1 (click)="openDialog(note)">{{note.title}}</h1>
                 <p (click)="openDialog(note)">{{note.description}}</p>
+                <app-icons  [noteId]="note" class="icon"></app-icons>
             </div>
-        <app-icons [IsUnArchive]="isUnArchive" [IsTrash]="isTrash" [noteId]="note" class="icon"></app-icons>
+        
+        </mat-card>
+    </div> -->
+
+
+
+    <div class="note-container" *ngFor="let note of allNotes">
+        <mat-card class="card" style="min-width: 260px;" [style.background]="note.color">
+            <div class="mainBlock" (click)="openDialog(note)" [style.background]="note.color">
+                <div [style.background-color]="colorData">
+                    <strong class="title">{{note.title}}</strong>
+                </div>
+    
+                <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
+                    class="font n1" dir="ltr" [style.background-color]="note.color">{{note.description}}</div>
+    
+            </div>
+            <div class="icon" [style.background-color]="note.color">
+                <app-icons class="icon" [noteId]="note.id" [noteData]="note"></app-icons>
+            </div>
         </mat-card>
     </div>

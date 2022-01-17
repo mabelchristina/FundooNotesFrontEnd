@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data/data.service';
 import { NotesService } from 'src/app/services/note/notes.service';
 
 @Component({
@@ -10,61 +11,62 @@ import { NotesService } from 'src/app/services/note/notes.service';
   styleUrls: ['./createnote.component.scss'],
 })
 export class CreatenoteComponent implements OnInit {
-  @Output() messageEvent = new EventEmitter<any>();
-  formBuilder: any;
-  colors: any;
-  hide:any
-    open:any=false;
 
-  isOpen = true;
-  public show: boolean = true;
-  public buttonName: any = "Title";
+  fullEdit: boolean = false;
+  pin: boolean = false;
+  title = '';
+  description = '';
+  token: any;
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private noteService: NotesService) {}
-  title=new FormControl('',[Validators.required])
-description=new FormControl('',[Validators.required])
-  noteForm!: FormGroup;
+    private noteService: NotesService,private data:DataService) {}
+
+  // noteForm!: FormGroup;
 
   @Output() createNoteAutoRefresh = new EventEmitter<any>();
 
   ngOnInit(): void {
-    this.noteForm = new FormGroup({
-      Title: new FormControl(null),
-      Body: new FormControl(null),
-    });
+   
   }
-  changeDisplay(){
-    this.open= !this.open
-  }
-  setClicked(){
-    this.hide=true
+ 
+
+  addNote() {
+    let data = {
+      title: this.title,
+      description: this.description,
+    }
+    console.log(data)
+    this.token = localStorage.getItem('token');
+    console.log(" add note data ", data, this.token);
+    if (this.title && this.description) {
+      this.noteService.createNote(this.token, data).subscribe((response: any) => {
+        console.log(response);
+        let message = "note created successfull";
+        console.log(message);
+
+        this.title = " ";
+        this.description = "";
+
+        // window.location.reload()
+        this.data.redirectTo("/dashboard/note")
+
+
+      }, error => {
+        console.log("error in register", error);
+      })
+    } else {
+      this.fullEdit = false;
+    }
   }
 
-  onClick() {
-    this.show = !this.show;
-    // CHANGE THE NAME OF THE field.
-    if (this.show)
-      this.buttonName = "Take a note";
-    else
-      this.buttonName = "Title"; }
-      
-  createNote() {
-    let reqData = {
-      title: this.noteForm.value.Title,
-      description: this.noteForm.value.Body,
-    };
 
-    this.noteService.createNote(reqData).subscribe((res: any) => {
-      console.log(" creating a note",res);
-      this.createNoteAutoRefresh.emit(res);
-    });
+  togglePin() {
+    this.pin = !this.pin;
   }
-  createColor(color: any) {
-    this.colors = color;
-    console.log(this.colors)
+  displayFull() {
+    this.fullEdit = true;
   }
  
 }

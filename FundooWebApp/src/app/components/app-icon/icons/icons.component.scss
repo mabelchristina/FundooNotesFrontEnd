@@ -1,125 +1,127 @@
 
 
-// // .common-icons{
-// //     width: 100%;
-// // }
+
+
+// .icons{
+//   padding: 3px 25px 3px 10px;
+//   width: 200px;
+//       cursor: pointer
+//   ;
+//   margin-top: 12%;
+//   margin-left: 13px;
+// }
+// .img1{
+//   margin-top: -10%;
+//   margin-left: 13px;
+// }
+
+
+// .img2{
+//   margin-top: -10%;
+//   margin-left: 13px;
+//   cursor: pointer;
+// }
+
+// .img3{
+//   margin-top: -14%;
+//   margin-left: 13px;
+//   cursor: pointer;  width: 45px;
+//   height: 50px;
+// }
+
+// .img4{
+//   margin-top: -10%;
+//   margin-left: 13px;
+//   cursor: pointer;
+// }
+
+// .img5{
+//   margin-top: -10%;
+//   margin-left: 13px;
+//   cursor: pointer;
+// }
+
+// .img6{
+//   margin-top: -14%;
+//   margin-left: 13px;
+//   cursor: pointer;
+// }
+// .delete{
+//   display:flex;
+// }
 
 
 
 
-// .third {
+.container{
+  flex-direction: row;
   
-//     // margin-left: 10px;
-//     padding: 3px 25px 3px 10px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     .icons {
-//       width: 420px;
-//       display: flex;
-//       justify-content: space-between;
-//       cursor: pointer;
-//     }
-//     .close {
-//       font-family: "Open Sans", sans-serif;
-//       font-weight: 600;
-//       padding-left: 30px;
-//       padding-right: 30px;
-//       height: 35px;
-//       margin-bottom: 5px;
-//       border-style: none;
-//     }
+}
+.sub-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+}
 
-//   }
-//   .mat-icon-button{
-//     width:5%;
-//     background-size: 1px;
-//     margin-left: 1%;
-//     margin-bottom: 1%;
-//     margin-right: 0px;
+.buttons{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-top: 40px;   
+}
 
-//   }
-//   @media screen and (max-width: 700px) {
-//     form {
-//       width: 500px;
-//     }
-//   }
-//   @media screen and (max-width: 515px) {
-//     form {
-//       width: 400px;
-//       .third {
-//         .icons {
-//           width: 300px;
-//           .undo,
-//           .redo {
-//             display: none;
-//           }
-//         }
-//         .close {
-//           padding-left: 10px;
-//           padding-right: 10px;
-//         }
-//       }
-//     }
-//   }
-//   @media screen and (max-width: 418px) {
-//     form {
-//       width: 340px;
-//       .third {
-//         .icons {
-//           width: 250px;
-//           .undo,
-//           .redo {
-//             display: none;
-//           }
-//         }
-//       }
-//     }
-//   }
+.menu-icon{
+  margin-top: 33px;
+  margin-left: -10px;
+}
 
-
+.menu-icon:hover {
+  background-color: lightgrey;
+  // padding: 2px 2px 2px 2px;
+  border-radius: 50px;
+}
 
 .icons{
-  padding: 3px 25px 3px 10px;
-  width: 200px;
-      cursor: pointer
-  ;
-  margin-top: 12%;
-  margin-left: 13px;
+  display: flex;
+  flex-direction: row;
 }
-.img1{
-  margin-top: -10%;
-  margin-left: 13px;
+
+.icon:hover {
+  background-color: lightgrey;
+  padding: 2px 2px 2px 2px;
+  border-radius: 50px;
 }
 
 
-.img2{
-  margin-top: -10%;
-  margin-left: 13px;
-  cursor: pointer;
+#icon {
+  margin-left: -30px;
+  // margin-right: 10px;
+  
 }
 
-.img3{
-  margin-top: -14%;
-  margin-left: 13px;
-  cursor: pointer;  width: 45px;
-  height: 50px;
+#icon:hover {
+  background-color: lightgrey;
+  padding: 2px 2px 2px 2px;
+  border-radius: 50px;
 }
 
-.img4{
-  margin-top: -10%;
-  margin-left: 13px;
-  cursor: pointer;
+#pin-icon {
+  margin-left: -45px;
+  background-color: transparent;
+  margin-top: 0px;
+  z-index: 4; 
 }
 
-.img5{
-  margin-top: -10%;
-  margin-left: 13px;
-  cursor: pointer;
+.pop {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: white;
+  max-width: 170px;
+  margin-left: 5px;
 }
-
-.img6{
-  margin-top: -14%;
-  margin-left: 13px;
-  cursor: pointer;
+.colorButton {
+  margin-right: 1px;
+  white-space: 2px;
 }

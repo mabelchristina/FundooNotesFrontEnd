@@ -1,4 +1,8 @@
-<app-createnote (createNoteAutoRefresh)="messageReceived($event)"></app-createnote>
-<app-displaynote  [NotesArray]='noteList'></app-displaynote>
+<!-- <app-createnote (createNoteAutoRefresh)="messageReceived($event)"></app-createnote>
+<app-displaynote  [NotesArray]='noteList'></app-displaynote> -->
 
 
+<app-createnote style="padding-top: 150px;" class="main-addnote"></app-createnote>
+<app-displaynote [allNotes]="notesArray"
+  style="display: flex;flex-wrap: wrap;padding: 10px 40px;justify-content: start;" class="main-getnote">
+</app-displaynote>

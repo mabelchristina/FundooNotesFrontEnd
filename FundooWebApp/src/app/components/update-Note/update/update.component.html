@@ -1,16 +1,8 @@
-<!-- <div>
-    <div>
-        <input [(ngModel)]='title' />
-    </div>
-    <div>
-        <input [(ngModel)]='description' />
-    </div>
-    <button (click)="updateNotes(data)">close</button>
-</div> -->
 
 
 
-<div style="display:flex;flex-direction: row;margin-top: 20px; width: 100%;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+
+<!-- <div style="display:flex;flex-direction: row;margin-top: 20px; width: 100%;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
     [style.backgroundColor]='data.color'>
 
     <form style="width: 100%;">
@@ -34,29 +26,58 @@
         <app-icons></app-icons>
     </form>
 
-</div>
+</div> -->
 
 
-<!-- <div class="outer" style="display: inline-block">
-    <div style="display: inline-block;margin-right: 10px;margin-bottom:10px ;">
-        <form [formGroup]='noteForm' style="flex:content;justify-content: center">
-            <div class="format" style="display: inline-block">
-                <div class="first">
-                    <div class="title"> <input matInput placeholder="Title" name="title" class="inputbase" [(ngModel)]="data.title"></div>
-                    <button mat-icon-button class="icons push_pin">
-                        <mat-icon class="material-icons-outlined">push_pin</mat-icon>
-                    </button>
-                </div>
-                <div class="second">
-                    <div >  <input matInput placeholder="Take a note ..." name="description" [(ngModel)]='data.description'
-                        class="inputbase"></div>
-                    <div></div>
-                </div>
-                <div class="iconAndButton">
-                    <button mat-button style="margin: 0 0;" (click)=updateNotes(data)>CLOSE</button>
-                </div>
-            </div>
-        </form>
+
+
+
+
+
+
+
+
+
+
+<div class="mainBlock" flex=50px>
+    <div fxLayout="row" fxLayoutAlign="space-between" class="title">
+        <input placeholder="Title" [(ngModel)]="title">
+        <button mat-icon-button id="pin"><img src='/assets/pin.svg'></button>
     </div>
+
+    <br>
+
+    <div class="description">
+        <input [(ngModel)]="description" placeholder="Note">
+    </div>
+
+    <br>
+
+    <div class="card-bottom" id="bottom" fxLayout="row" fxLayoutAlign="space-evenly none">
+        <div class="note-prop">
+            <div class="reminder prop" role="button"></div>
+            <div class="back-img prop" role="button"></div>
+            <div class="back-color prop" role="button"></div>
+            <div class="archive prop" role="button"></div>
+            <div class="more-opn prop" role="button"></div>
+            <div class="undo prop" role="button" disabled></div>
+            <div class="redo prop" role="button"></div>
+        </div>
+<app-icons></app-icons>
+        <div class="close-note" id="close" (click)=updateNote() >Close</div>
+    </div>
+
 </div>
-                <app-icons></app-icons> -->
+
+
+
+
+
+
+
+
+
+
+
+
+                

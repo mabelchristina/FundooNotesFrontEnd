@@ -1,113 +1,143 @@
-<!-- <div class="common-icons" fxFlex="100" fxLayout="row" fxLayoutAlign="space-between">
-    <mat-icon>add_alert</mat-icon>
-    <mat-icon>person_add_alt</mat-icon>
-    <mat-icon>color_lens</mat-icon>
-    <mat-icon>photo_size_select_actual</mat-icon>
-    <mat-icon>archive</mat-icon>
-    <mat-icon>more_vert</mat-icon>
-</div> -->
+<!-- <div class="icons" *ngIf='!isTrashComponent' style="display: flex;justify-content: space-evenly;">
 
+  <div class="img1" >
+    <mat-icon class="icon">add_alert</mat-icon>
+  </div>
 
-<!-- <div class="third" style="display: flex;size: 5px;">
-    <div class="icons">
-      <button mat-icon-button style="size: 5%;">
-        <mat-icon class="material-icons-outlined">notifications_none</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">person_add</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">color_lens</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">insert_photo</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
-      </button>
+  <div class="img2" >
+    <mat-icon class="icon">person_add</mat-icon>
+  </div>
 
-
-      
-
-      <!-- <button mat-icon-button (click)=" deleteNote()">
-        <mat-icon style="background-blend-mode: normal;"> delete</mat-icon>
-    </button>
-      <button mat-icon-button>
-        <mat-icon class="material-icons-outlined">more_vert</mat-icon> -->
-<!-- <button mat-icon-button disabled class="undo">
-          <mat-icon class="material-icons-outlined">undo</mat-icon>
-        </button>
-        <button mat-icon-button disabled class="redo">
-          <mat-icon class="material-icons-outlined">redo</mat-icon>
-        </button> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="icons" style="display: flex;justify-content: space-evenly;" >
-    
-    <div class="img1" *ngIf='!IsTrash'>
-      <mat-icon class="icon">add_alert</mat-icon>
-    </div>
-
-    <div class="img2" *ngIf='!IsTrash'>
-      <mat-icon class="icon">person_add</mat-icon>
-    </div>
-
-    <div class="img3" >
-      <div *ngIf='!IsTrash'>
-        <mat-menu #menu="matMenu" class="mat">
-          <div *ngFor="let color of colors" class="menu">
-            <button type="button" class="button" [ngStyle]="{'background-color': color.color}"
-              (click)="bgColor(color.color)"></button>
-          </div>
-        </mat-menu>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon class="icon">palette</mat-icon>
-        </button>
-      </div>
-    </div>
-
-    <div class="img4" *ngIf='!IsTrash'>
-      <mat-icon class="icon">photo</mat-icon>
-    </div>
-
-    <div class="img5" (click)="getArchive()" *ngIf='!IsTrash && !IsUnArchive'>
-      <mat-icon class="icon">archive</mat-icon>
-    </div>
-
-    <div class="img5" (click)="unArchive()" *ngIf='IsUnArchive'>
-      <mat-icon class="icon">unarchive</mat-icon>
-
-    </div>
-
-    <div class="img6" *ngIf='!IsTrash'>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)=" deleteNote()">
-          <span>delete</span>
-        </button>
+  <div class="img3">
+    <div >
+      <mat-menu #menu="matMenu" class="mat">
+        <div *ngFor="let color of colors" class="menu">
+          <button type="button" class="button" [ngStyle]="{'background-color': color.color}"
+            (click)="bgColor(color.color)"></button>
+        </div>
       </mat-menu>
-    </div>
-    <div fxLayout="row" *ngIf='IsTrash' class="delete">
-      <div (click)="deleteForever()">
-        <mat-icon>delete_forever</mat-icon>
-      </div>
-      <div (click)="restoreNote()">
-        <mat-icon style="margin-left: 10px;">restore_from_trash</mat-icon>
-      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon class="icon">palette</mat-icon>
+      </button>
     </div>
   </div>
+
+  <div class="img4" *ngIf='!IsTrash'>
+    <mat-icon class="icon">photo</mat-icon>
+  </div>
+
+  <div class="img5" (click)="getArchive()" *ngIf='!IsTrash && !IsUnArchive'>
+    <mat-icon class="icon">archive</mat-icon>
+  </div>
+
+  <div class="img5" (click)="unArchive()" *ngIf='IsUnArchive'>
+    <mat-icon class="icon">unarchive</mat-icon>
+
+  </div>
+
+  <div class="img6" *ngIf='!IsTrash'>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)=" deleteNote()">
+        <span>delete</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>
+<div *ngIf='isTrashComponent' >
+  <div *ngIf='noteId.isDeleted' fxLayout="row " class="delete">
+    <div (click)="deleteForever()">
+      <mat-icon>delete_forever</mat-icon>
+    </div>
+    <div (click)="restoreNote()">
+      <mat-icon>restore_from_trash</mat-icon>
+    </div>
+  </div>
+
+</div>
+  -->
+
+
+
+  <div class="container" id="container">
+
+    <div  class="sub-container" *ngIf="!isTrashComponent">
+
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/bellicon.svg" alt="">
+            </button>
+        </div>
+
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/addimg.svg" alt="">
+            </button>
+        </div>
+
+        <div class="icons">
+            <button class="buttons" matTooltip="colour" [matMenuTriggerFor]="colorMenu">
+                <img class="icon" src="assets/colourpallete.svg" alt="">
+                <mat-menu #colorMenu="matMenu">
+                    <div class="pop">
+
+                        <div *ngFor="let color of colors" class="colorButton">
+                            <button mat-mini-fab [style.background]="color?.code"
+                                (click)="setColor(color.code)"></button>
+                        </div>
+                    </div>
+                </mat-menu>
+            </button>
+        </div>
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/img.svg" alt="">
+            </button>
+        </div>
+
+        <div class="icons">
+            <button class="buttons" (click)=archive() *ngIf="!isArchiveComponent">
+                <img class="icon" src="assets/archive.svg" alt="">
+            </button>
+        </div>
+
+        <div>
+            <button class="buttons" matTooltip="Unarchive" (click)="unarchive()" *ngIf="isArchiveComponent">
+                <img class="icons" src="assets/unarchive_black_24dp.svg" alt="">
+            </button>
+        </div>
+
+        <div class="icons">
+
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-icon"
+                aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)=delete()>
+                    <span>Delete note</span>
+                </button>
+                <button mat-menu-item>
+                    <span>Add lebel</span>
+                </button>
+                <button mat-menu-item>
+                    <span>Make a copy</span>
+                </button>
+            </mat-menu>
+
+        </div>
+    </div>
+
+
+    <div *ngIf="isTrashComponent" fxLayout="row">
+        <button class="buttons" matTooltip="Delete forever" (click)="permanentDelete()">
+            <img class="icons" src="assets/crossdelete.svg" alt="">
+        </button>
+
+        <button class="buttons" matTooltip="Restore" (click)="restore()">
+            <img class="icons" src="assets/deletearrow.svg" alt="">
+        </button>
+    </div>
+</div>

@@ -10,6 +10,8 @@ import { MatDialog} from '@angular/material/dialog';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  isExpandable: boolean = false;
   mobileQuery: MediaQueryList;
   fillerNav = Array.from({ length: 10 }, (_, i) => `Nav Item ${i + 1}`);
   fillerContent = Array.from({ length: 10 }, () =>
@@ -24,7 +26,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     public route: Router,
     public dialog: MatDialog,
-    changeDetectorRef: ChangeDetectorRef, media: MediaMatcher
+    changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router
   ) {this.mobileQuery = media.matchMedia('(max-width: 600px)');
   this._mobileQueryListener = () => changeDetectorRef.detectChanges();
   this.mobileQuery.addListener(this._mobileQueryListener);
@@ -51,6 +53,27 @@ ngOnDestroy(): void {
     localStorage.removeItem('token')
     this.route.navigateByUrl('/login')
   }
+
+  
+  notes() {
+    this.router.navigateByUrl('/dashboard/note');
+  };
+
+  reminder() {
+    this.router.navigateByUrl('/user');
+  };
+
+  editlabel() {
+    this.router.navigateByUrl('/user');
+  };
+
+  archive() {
+    this.router.navigateByUrl('/dashboard/archive');
+  };
+
+  trash() {
+    this.router.navigateByUrl('/dashboard/trash');
+  };
   }
 
 

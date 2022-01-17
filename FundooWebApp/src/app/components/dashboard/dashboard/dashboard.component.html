@@ -73,7 +73,7 @@
 
 
 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="Basic" class="example-toolbar">
       <button class="navMenu" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     
@@ -91,19 +91,19 @@
         <mat-icon>apps</mat-icon>
       </div>
       <div class="apps-icon" style="margin-left:3%" fxLayoutAlign="center center">
-        <!-- <mat-icon  >account_circle</mat-icon> -->
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon>account_circle</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="signout()">
-            <span>signout</span>
-          </button>
-        </mat-menu>
-      </div>
+        <mat-icon  >account_circle</mat-icon>
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>account_circle</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="signout()">
+    <span>signout</span>
+  </button>
+</mat-menu>
+</div>
     </mat-toolbar>
-    
-    <mat-sidenav-container class="example-sidenav-container"
+
+ <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
@@ -124,7 +124,7 @@
             <mat-icon>archive</mat-icon>
             Archive
           </a>
-          <a mat-list-item routerLink="/trash">
+          <a mat-list-item routerLink="/dashboard/trash">
             <mat-icon>delete</mat-icon>
             Delete
           </a>
@@ -132,7 +132,7 @@
       </mat-sidenav>
       <mat-sidenav-content>
         <hr>
-        <!-- <app-get-all-notes></app-get-all-notes> -->
+        <app-get-all-notes></app-get-all-notes>
         <app-get-all-notes *ngIf="route.url==='/dashboard/note'" ></app-get-all-notes>
         <app-trash *ngIf="route.url==='/dashboard/trash'" ></app-trash>
         <app-archive *ngIf="route.url==='/dashboard/archive'"></app-archive>
@@ -142,7 +142,113 @@
         <router-outlet></router-outlet>
     </mat-sidenav-content>
     </mat-sidenav-container>
-  </div>
-  <app-get-all-notes></app-get-all-notes>
- 
-  
+    </div> 
+   <app-get-all-notes></app-get-all-notes>
+ -->
+
+
+
+
+
+ <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <mat-toolbar class="example-toolbar">
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button class="menuBtn" mat-icon-button (click)="isExpandable=!isExpandable">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+        <img class="logo" src="assets/keep-img.png" alt="Fundoo logo">
+        
+      </div>
+    
+    <p>Fundoo</p>
+
+
+    <div class="searchBar" fxHide.lt-md fxFlex=40 fxLayout="row" fxLayoutAlign="center center">
+      <a href="#">
+        <mat-icon id="icon">search</mat-icon>
+      </a>
+      <input id="searchbar" type="text" placeholder="Search..">
+    </div>
+
+    <div class="profile" fxFlex=100 fxLayout="row" fxLayoutAlign="end" fxFlexgap=20px>
+
+      <div class="container" fxLayout="row" fxLayoutAlign="end center">
+        <button class="button">
+          <img src="/assets/refresh.svg">
+        </button>
+      </div>
+
+      <div fxHide.xs class="container" fxLayout="row" fxLayoutAlign="end center">
+        <button class="button">
+          <img src="/assets/list.svg">
+        </button>
+      </div>
+
+      <div fxHide.xs class="container" fxLayout="row" fxLayoutAlign="end center">
+        <button class="button">
+          <img src="/assets/settings.svg">
+        </button>
+      </div>
+
+      <div fxHide.xs class="container" fxLayout="row" fxLayoutAlign="end center">
+        <button class="button" id="grid" style="margin-right:50px ;">
+          <mat-icon>view_comfy</mat-icon>
+        </button>
+      </div>
+
+      <div fxHide.xs fxLayout="row" fxLayoutAlign="space-around" ngClass="log-out-icon">
+        <button mat-mini-fab color="" mat-icon-button>
+          <mat-icon (click)="signout()">account_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav opened="true" mode="side" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list (mouseover)="isExpandable=true" (mouseleave)="isExpandable=false">
+        <div class="navlist active" fxLayout="row" (mouseover)="isExpandable=true" fxLayoutAlign="start center"
+          fxLayoutGap="20px" mat-list-item (click)="notes();">
+          <button class="navBtn btnPosition" mat-icon-button>
+            <img src="/assets/lightbulb.svg">
+          </button>
+          <p class="navName  " *ngIf="isExpandable">Notes</p>
+        </div>
+
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" (mouseover)="isExpandable=true"
+          fxLayoutGap="20px" mat-list-item (click)="reminder();">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <img src="/assets/download.svg">
+          </button>
+          <p class="navName " *ngIf="isExpandable">Reminder</p>
+        </div>
+
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" (mouseover)="isExpandable=true"
+          fxLayoutGap="20px" mat-list-item (click)="editlabel();">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <img src="/assets/label.svg">
+          </button>
+          <p class="navName " *ngIf="isExpandable">Edit Labels</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" (mouseover)="isExpandable=true"
+          fxLayoutGap="20px" mat-list-item (click)="archive();">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <img src="/assets/archive.svg">
+          </button>
+          <p class="navName " *ngIf="isExpandable">Archive</p>
+        </div>
+        <div class="navlist" fxLayout="row" fxLayoutAlign="start center" (mouseover)="isExpandable=true"
+          fxLayoutGap="20px" mat-list-item (click)="trash();">
+          <button class="navBtn btnPosition" mat-icon-button (mouseover)="isExpandable=true">
+            <img src="/assets/delete.svg">
+          </button>
+          <p class="navName" *ngIf="isExpandable">Trash</p>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+</div> 

@@ -1,5 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data/data.service';
 import { NotesService } from 'src/app/services/note/notes.service';
 
 @Component({
@@ -8,10 +9,11 @@ import { NotesService } from 'src/app/services/note/notes.service';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
-  notes: any
+  notesArray: any;
+  token=localStorage . getItem('token' )
 
 
-  constructor(private noteservice:NotesService) { }
+  constructor(private noteservice:NotesService,public data:DataService) { }
   
 
   ngOnInit(): void {
@@ -21,12 +23,25 @@ export class TrashComponent implements OnInit {
 
   getAllTrash() {
     console.log('getting to all trash');
-    this.noteservice.getAllNotes().subscribe((result: any) => {
+    this.noteservice.delete().subscribe((result: any) => {
       console.log(result);
-      this.notes = result.data.data;
-      this.notes.reverse();
+      this.notesArray = result.data.data;
+      this.notesArray.reverse();
 
-      console.log('the note list is', this.notes);
+      console.log('the note list is', this.notesArray);
     });
+  }
+  permanentDelete() {
+    // console.log(this.noteId);
+    //alert(this.token_Id)
+    let data = {
+      isDeleted: true,
+      noteIdList: [this.notesArray]
+    }
+    this.noteservice.deleteForeverNotes(data).subscribe((data: any) => {
+      console.log(" Deleted Successfully", data);
+      // window.location.reload();
+    });
+    this.data.redirectTo("/dashboard/trash")
   }
 }
